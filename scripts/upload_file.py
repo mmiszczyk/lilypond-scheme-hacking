@@ -30,6 +30,8 @@ with open(a.file, "rb") as infile:
     lines.append('(define inputfilename "/tmp/asdf")')
     add_from_template(lines, 'shell_exec_to_file.scm')
     add_from_template(lines, 'read_file.scm')
+  else:
+    lines.append('(define s "Hello, world!")')
 
 prefix = '#' if a.format != 'scm' else ''
 if a.format == 'wiki':
