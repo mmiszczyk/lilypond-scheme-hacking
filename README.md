@@ -39,8 +39,7 @@ and hardcoded into Scheme code, which then decodes it into a file
 using shell commands. The file might be then executed. The script
 can return Scheme code, Lilypond code or complete Wiki markup.
 
-Usage
------
+### Usage
 
 ```bash
 usage: upload_file.py [-h] [-f {scm,ly,wiki}] [-e] file
