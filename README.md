@@ -23,13 +23,13 @@ inject Scheme code and observe resulting output images. Those
 assumptions may or may not be true when attacking Lilypond
 installations outside of MediaWiki.
 
-## snippets/
+## ```snippets/```
 
 Snippets contain example Lilypond code which can perform actions
 useful for the attackers - e.g. parsing ```/etc/passwd``` or
 executing shell commands and reading their outputs.
 
-## scripts/upload_file.py
+## ```scripts/upload_file.py```
 
 This script generates code which uploads a file from disk. It
 can optionally execute this file, returning its output in generated
@@ -56,7 +56,7 @@ optional arguments:
   -e, --execute         execute file after uploading
 ```
 
-## scripts/templates/
+## ```scripts/templates/```
 
 This directory contains Scheme code templates (similar to those in
 the ```snippets/``` directory) used for generating the completed
