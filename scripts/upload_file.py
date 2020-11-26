@@ -18,14 +18,16 @@ p = argparse.ArgumentParser(description='Generate Lilypond/Guile/MediaWiki code 
 p.add_argument('file', help='path to file')
 p.add_argument('-f', '--format', help='output format', choices=['scm', 'ly', 'wiki'], default='scm')
 p.add_argument('-e', '--execute', help='execute file after uploading', action='store_true')
+p.add_argument('-r', '--remote_path', help='path to which the file will be uploaded (default is in /tmp, might be useful to change if it\'s noexec)',
+               default='/tmp/qwerty')
 a = p.parse_args()
 
 lines = []
 with open(a.file, "rb") as infile:
-  lines.append('(define cmd "echo ' + base64.b64encode(infile.read()).decode('ascii') + ' > /tmp/qwerty")')
+  lines.append('(define cmd "echo ' + base64.b64encode(infile.read()).decode('ascii') + ' > ' + a.remote_path + '")')
   add_from_template(lines, 'shell_exec_blind.scm')
   if a.execute:
-    lines.append('(define shellcmd "chmod +x /tmp/qwerty; /tmp/qwerty")')
+    lines.append('(define shellcmd "chmod +x ' + a.remote_path +'; ' + a.remote_path + '")')
     lines.append('(define shellout "/tmp/asdf")')
     lines.append('(define inputfilename "/tmp/asdf")')
     add_from_template(lines, 'shell_exec_to_file.scm')

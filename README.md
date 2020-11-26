@@ -43,7 +43,7 @@ can return Scheme code, Lilypond code or complete Wiki markup.
 ### Usage
 
 ```bash
-usage: upload_file.py [-h] [-f {scm,ly,wiki}] [-e] file
+usage: upload_file.py [-h] [-f {scm,ly,wiki}] [-e] [-r REMOTE_PATH] file
 
 Generate Lilypond/Guile/MediaWiki code to upload file to a vulnerable server
 
@@ -55,6 +55,9 @@ optional arguments:
   -f {scm,ly,wiki}, --format {scm,ly,wiki}
                         output format
   -e, --execute         execute file after uploading
+  -r REMOTE_PATH, --remote_path REMOTE_PATH
+                        path to which the file will be uploaded (default is in
+                        /tmp, might be useful to change if it's noexec)
 ```
 
 ## ```scripts/templates/```
