@@ -15,6 +15,7 @@ Code in this repository was developed during research into
 a vulnerability in Score extension for Mediawiki engine. Said
 extension allowed rendering musical scores based on ABC or
 Lilypond code, with Lilypond backend being run without safe mode.
+The issue has been assigned CVE identifier CVE-2020-29007.
 
 Because other sandboxing settings disallowed network connectivity,
 the code here doesn't spawn any sort of bind or reverse shell.
