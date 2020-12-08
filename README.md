@@ -24,6 +24,11 @@ inject Scheme code and observe resulting output images. Those
 assumptions may or may not be true when attacking Lilypond
 installations outside of MediaWiki.
 
+## ```vulns/```
+
+Advisories for specific Lilypond-related vulnerabilities which
+can potentially be exploited with this repo's scripts and snippets.
+
 ## ```snippets/```
 
 Snippets contain example Lilypond code which can perform actions
