@@ -1,0 +1,3 @@
+[submodule "vulns/cve-2020-29007"]
+	path = vulns/cve-2020-29007
+	url = https://github.com/seqred-s-a/cve-2020-29007
